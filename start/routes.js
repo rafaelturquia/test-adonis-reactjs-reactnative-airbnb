@@ -41,3 +41,8 @@ Route.post('/sessions', 'SessionController.create')
    * já o middleware auth vai garantir que usuários não autenticados
    * não possam utilizar essas rotas.
    */
+
+  Route.post('properties/:id/images', 'ImageController.store')
+  .middleware('auth')
+
+  Route.get('images/:path', 'ImageController.show')
